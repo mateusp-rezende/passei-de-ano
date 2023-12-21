@@ -28,7 +28,7 @@ function Calcular() {
     if (media >= mediaAlvo) {
         document.getElementById("resultado").textContent = " Aprovado!";
     } else {
-        let pontosFaltantes = (mediaAlvo * somaPesos - nota) / 10;
+        let pontosFaltantes = (mediaAlvo * somaPesos - nota) ;
         document.getElementById("resultado").textContent = " Reprovado. ";
         document.getElementById("faltam").textContent = " Faltam " + pontosFaltantes.toFixed(2) + " pontos para passar de ano.";
     }
