@@ -22,9 +22,9 @@ function Calcular() {
     const media = somaPesos === 0 ? 0 : nota / somaPesos;
     const pontosFaltantes = (mediaAlvo - nota)* peso3
     const resultadoMsg = media >= mediaAlvo ? "Aprovado!" : "Reprovado.";
-    const faltamMsg = media >= mediaAlvo ? "" : `Faltam ${Math.abs(pontosFaltantes.toFixed(2))} pontos para passar de ano.`;
+    //const faltamMsg = media >= mediaAlvo ? "" : `Faltam ${Math.abs(pontosFaltantes.toFixed(2))} pontos para passar de ano.`;
 
     // Atualiza os campos de resultado
     document.getElementById("resultado").textContent = resultadoMsg;
-    document.getElementById("faltam").textContent = faltamMsg;
+  //  document.getElementById("faltam").textContent = faltamMsg;
 }
