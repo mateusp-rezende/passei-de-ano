@@ -18,11 +18,9 @@ function Calcular() {
     let somaPesos = peso1 + peso2 + peso3;
     let media = somaPesos === 0 ? 0 : nota / somaPesos;
 
-    // Exibe a nota dividida por 10
-    let notaExibida = (nota).toFixed(2);
-
+   
     // Atualiza o campo "nota" com o resultado
-    document.getElementById("nota").textContent =  notaExibida;
+    document.getElementById("nota").textContent =  nota;
 
     // Verifica a situação do aluno e calcula pontos faltantes
     if (media >= mediaAlvo) {
