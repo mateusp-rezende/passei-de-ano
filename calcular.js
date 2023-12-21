@@ -20,7 +20,7 @@ function Calcular() {
     // Verifica a situação do aluno e calcula pontos faltantes
     const somaPesos = peso1 + peso2 + peso3;
     const media = somaPesos === 0 ? 0 : nota / somaPesos;
-    const pontosFaltantes = mediaAlvo * somaPesos - nota;
+    const pontosFaltantes = (mediaAlvo - nota)* peso3
     const resultadoMsg = media >= mediaAlvo ? "Aprovado!" : "Reprovado.";
     const faltamMsg = media >= mediaAlvo ? "" : `Faltam ${Math.abs(pontosFaltantes.toFixed(2))} pontos para passar de ano.`;
 
