@@ -13,9 +13,9 @@ function Calcular() {
     peso2 = peso2 > 1 ? peso2 / 10 : peso2;
     peso3 = peso3 > 1 ? peso3 / 10 : peso3;
 
-    // Atualiza o campo "nota" com o resultado (sem toFixed para manter precisão)
-    document.getElementById("nota").textContent = (trim1 * peso1 + trim2 * peso2 + trim3 * peso3).toFixed(2);
-
+// Calcula a média ponderada e atualiza o campo "nota" com o resultado formatado para duas casas decimais
+    const nota = trim1 * peso1 + trim2 * peso2 + trim3 * peso3;
+    document.getElementById("nota").textContent = nota.toFixed(2);
     // Verifica a situação do aluno e calcula pontos faltantes
     const somaPesos = peso1 + peso2 + peso3;
     const pontosFaltantes = mediaAlvo * somaPesos - (trim1 * peso1 + trim2 * peso2 + trim3 * peso3);
