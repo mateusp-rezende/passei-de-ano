@@ -13,14 +13,16 @@ function Calcular() {
     peso2 = peso2 > 1 ? peso2 / 10 : peso2;
     peso3 = peso3 > 1 ? peso3 / 10 : peso3;
 
-// Calcula a média ponderada e atualiza o campo "nota" com o resultado formatado para duas casas decimais
+    // Calcula a média ponderada e atualiza o campo "nota" com o resultado formatado para duas casas decimais
     const nota = trim1 * peso1 + trim2 * peso2 + trim3 * peso3;
     document.getElementById("nota").textContent = nota.toFixed(2);
+
     // Verifica a situação do aluno e calcula pontos faltantes
     const somaPesos = peso1 + peso2 + peso3;
-    const pontosFaltantes = mediaAlvo * somaPesos - (trim1 * peso1 + trim2 * peso2 + trim3 * peso3);
-    const resultadoMsg = (somaPesos === 0 || (trim1 * peso1 + trim2 * peso2 + trim3 * peso3) === 0) ? "Aprovado!" : "Reprovado.";
-    const faltamMsg = (somaPesos === 0 || (trim1 * peso1 + trim2 * peso2 + trim3 * peso3) === 0) ? "" : `Faltam ${pontosFaltantes.toFixed(2)} pontos para passar de ano.`;
+    const media = somaPesos === 0 ? 0 : nota / somaPesos;
+    const pontosFaltantes = mediaAlvo * somaPesos - nota;
+    const resultadoMsg = media >= mediaAlvo ? "Aprovado!" : "Reprovado.";
+    const faltamMsg = media >= mediaAlvo ? "" : `Faltam ${Math.abs(pontosFaltantes.toFixed(2))} pontos para passar de ano.`;
 
     // Atualiza os campos de resultado
     document.getElementById("resultado").textContent = resultadoMsg;
