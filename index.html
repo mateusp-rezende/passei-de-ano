@@ -20,6 +20,17 @@
            
         }
 
+        .card{
+            width:300px;
+            height:300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            
+        }
+        
+
         aside{
             display: flex;
             justify-content: center;
@@ -50,7 +61,7 @@
         <fieldset >
         <form class="needs-validation" novalidate action="#" onsubmit="Calcular(); return false;">
             <h1>Passei de ano?</h1>
-            <div class="input-group">
+            <div class="input-group card">
                 <span class="input-group-text" for="media">Qual a média:</span>
                 <input class="form-control" name="media" type="text" id="media" value="6">
             </div>
