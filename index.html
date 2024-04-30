@@ -110,3 +110,53 @@
     </aside>
 </body>
 </html>
+
+    <script>
+       function Calcular() {
+    const trim1 = parseFloat(document.getElementById("trim1").value) || 0;
+    const trim2 = parseFloat(document.getElementById("trim2").value) || 0;
+    const trim3 = parseFloat(document.getElementById("trim3").value) || 0;
+    let peso1 = parseFloat(document.getElementById("peso1").value) || 0.3;
+    let peso2 = parseFloat(document.getElementById("peso2").value) || 0.3;
+    let peso3 = parseFloat(document.getElementById("peso3").value) || 0.4;
+    const mediaAlvo = parseFloat(document.getElementById("media").value);
+
+    peso1 = peso1 > 1 ? peso1 / 10 : peso1;
+    peso2 = peso2 > 1 ? peso2 / 10 : peso2;
+    peso3 = peso3 > 1 ? peso3 / 10 : peso3;
+
+    const nota = trim1 * peso1 + trim2 * peso2 + trim3 * peso3;
+    document.getElementById("nota").textContent = nota.toFixed(2);
+
+    const somaPesos = peso1 + peso2 + peso3;
+    const media = somaPesos === 0 ? 0 : nota / somaPesos;
+    const resultadoMsg = media >= mediaAlvo ? "Aprovado!" : "Reprovado.";
+    document.getElementById("resultado").textContent = resultadoMsg;
+
+    const imagem1 = document.getElementById("imagem-1");
+    const imagem2 = document.getElementById("imagem-2");
+    const imagem3 = document.getElementById("imagem-3");
+
+    if (media > mediaAlvo) {
+        document.body.style.backgroundColor = "rgb(0, 255, 255)";
+        imagem2.style.display = "none";  // Esconder imagem2
+        imagem1.style.display = "block";
+        imagem3.style.display = "none";  // Esconder imagem3
+    } else if(media == mediaAlvo){
+        document.body.style.backgroundColor = "rgb(255,215,0)";
+        imagem1.style.display = "none";  // Esconder imagem1
+        imagem3.style.display = "none";  // Esconder imagem3
+        imagem2.style.display = "block";
+       
+    }else if (media < mediaAlvo) {
+        document.body.style.backgroundColor = "rgb(0,0, 0)";
+        imagem1.style.display = "none";  // Esconder imagem1
+        imagem2.style.display = "none";  // Esconder imagem2
+        imagem3.style.display = "block";
+     
+    }
+}
+
+    </script>
+    
+
